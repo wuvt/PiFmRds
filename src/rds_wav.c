@@ -37,21 +37,18 @@
 
 /* Simple test program */
 int main(int argc, char **argv) {
-    if(argc < 4) {
+    if(argc < 3) {
         fprintf(stderr, "Error: missing argument.\n");
-        fprintf(stderr, "Syntax: rds_wav <in_audio.wav> <out_mpx.wav> <text>\n");
+        fprintf(stderr, "Syntax: rds_wav <out.wav> <text>\n");
         return EXIT_FAILURE;
     }
     
     set_rds_pi(0x8BAD); // http://www.w9wi.com/articles/rdsreverse.htm
     set_rds_ps("WUVT");
-    set_rds_rt(argv[3]);
+    set_rds_rt(argv[2]);
     
-    char *in_file = argv[1];
-    if(strcmp("NONE", argv[1]) == 0) in_file = NULL;
-    
-    if(fm_mpx_open(in_file, LENGTH) != 0) {
-        printf("Could not setup FM mulitplex generator.\n");
+    if(fm_mpx_open(NULL, LENGTH) != 0) {
+        printf("Could not setup audio mulitplexer.\n");
         return EXIT_FAILURE;
     }
     
@@ -69,7 +66,7 @@ int main(int argc, char **argv) {
     sfinfo.seekable = 0;
     
     // Open the output file
-    char *out_file = argv[2];
+    char *out_file = argv[1];
     if (! (outf = sf_open(out_file, SFM_WRITE, &sfinfo))) {
         fprintf(stderr, "Error: could not open output file %s.\n", out_file);
         return EXIT_FAILURE;
