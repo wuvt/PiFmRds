@@ -43,8 +43,8 @@ int main(int argc, char **argv) {
         return EXIT_FAILURE;
     }
     
-    set_rds_pi(0x1234);
-    set_rds_ps(argv[3]);
+    set_rds_pi(0x8BAD); // http://www.w9wi.com/articles/rdsreverse.htm
+    set_rds_ps("WUVT");
     set_rds_rt(argv[3]);
     
     char *in_file = argv[1];
@@ -77,12 +77,12 @@ int main(int argc, char **argv) {
 
     float mpx_buffer[LENGTH];
 
-    for(int j=0; j<40; j++) {
+    for(int j=0; j<120; j++) {
         if( fm_mpx_get_samples(mpx_buffer) < 0 ) break;
         
         // scale samples
         for(int i=0; i<LENGTH; i++) {
-            mpx_buffer[i] /= 10.;
+            mpx_buffer[i] /= 2.;
         }
 
         if(sf_write_float(outf, mpx_buffer, LENGTH) != LENGTH) {
