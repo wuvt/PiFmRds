@@ -79,7 +79,7 @@ int main(int argc, char **argv) {
         
         // scale samples
         for(int i=0; i<LENGTH; i++) {
-            mpx_buffer[i] /= 2.;
+            mpx_buffer[i] /= 1.5;
         }
 
         if(sf_write_float(outf, mpx_buffer, LENGTH) != LENGTH) {
