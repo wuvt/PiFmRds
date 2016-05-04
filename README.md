@@ -20,6 +20,8 @@ make
 
 On rds, run both the rds_wuvt and rds_play scripts in the src directory. rds_wuvt generates the rds audio file, while rds_play plays it. If rds_wuvt is under maintenance or ceases to operate correctly, rds_play will continue to output the rds signal with static metadata. Systemd unit files coming soon.
 
+As of May 2016, the RDS signal is output via the headphone jack on the PCI DAC, with the PCM Headphone control set to 55%, or -15.5 dB gain.
+
 Credits for the underlying RDS encoder to [Christophe Jacquet](http://www.jacquet80.eu/) (F8FTK).
 
 Copyright 2016, released under the GNU GPL v3.
