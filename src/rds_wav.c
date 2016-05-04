@@ -74,7 +74,7 @@ int main(int argc, char **argv) {
 
     float mpx_buffer[LENGTH];
 
-    for(int j=0; j<120; j++) {
+    for(int j=0; j<40; j++) {
         if( fm_mpx_get_samples(mpx_buffer) < 0 ) break;
         
         // scale samples

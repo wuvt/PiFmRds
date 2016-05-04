@@ -2,6 +2,7 @@ while true; do
 	./rds_wav rds.wav "`curl http://fukushima/playlists/latest_track_clean.php`"
 	ffmpeg -i rds.wav -ar 192000 -f s32le -acodec pcm_s32le -ac 2 rds.raw
 	mv rds.raw playme.raw
+	sleep 10
 done
 
 while true; do
