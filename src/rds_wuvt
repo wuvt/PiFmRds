@@ -1,5 +1,10 @@
 #!/bin/bash
 
-while true; do
-	aplay -r192000 -D hw:1 -f S32_LE -c2 playme.raw
+while true; do 
+	./rds_wav rds.wav "`curl http://fukushima/playlists/latest_track_clean.php`"
+	ffmpeg -i rds.wav -ar 192000 -f s32le -acodec pcm_s32le -ac 2 rds.raw
+#        ~/ffmpeg-1.8.5-32bit-static/ffmpeg -i rds.wav -i wuvt.wav -filter_complex amix=inputs=2:duration=first:dropout_transition=300,volume=2 -ar 192000 -f s32le -acodec pcm_s32le -ac 2 rds.raw
+	mv rds.raw playme.raw
+	sleep 10
 done
+
