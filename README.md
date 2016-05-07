@@ -22,6 +22,10 @@ On rds, run both the rds_wuvt and rds_play scripts in the src directory. rds_wuv
 
 As of May 2016, the RDS signal is output via the headphone jack on the PCI DAC, with the PCM Headphone control set to 55%, or -15.5 dB gain.
 
+### Todo
+
+The rds encoder has a perfectly fine socket system for feeding it new track data. We just need to actually set up code to grab new track data and feed it into a unix socket, which is...eh, we could get around to it. Unfortunately, that would end up requiring us to either sync ffmpeg, rds, and aplay (running at different sample rates), or add gstreamer support to PiFmRds. Refer back to the above warning regarding "total hacks". I'd argue that this one is arguably the simpler, more stable evil.
+
 Credits for the underlying RDS encoder to [Christophe Jacquet](http://www.jacquet80.eu/) (F8FTK).
 
 Copyright 2016, released under the GNU GPL v3.
