@@ -1,5 +1,5 @@
 #!/bin/bash
 
 while true; do
-	aplay -r192000 -D hw:1 -f S32_LE -c2 playme.raw
+	aplay -q -r192000 -D hw:1 -f S32_LE -c2 playme.raw
 done

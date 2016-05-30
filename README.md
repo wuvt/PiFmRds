@@ -22,6 +22,10 @@ On rds, run both the rds_wuvt and rds_play scripts in the src directory. rds_wuv
 
 As of May 2016, the RDS signal is output via the headphone jack on the PCI DAC, with the PCM Headphone control set to 55%, or -15.5 dB gain.
 
+### omg why are you bundling a static ffmpeg?
+
+As is the custom at WUVT, we have selected the most reliable, rather than the newest, hardware. Or, more honestly, the cheapest. The rds deployment runs on a 32-bit tower which was donated to WUVT, like nearly all of our machines. Because we use CentOS for machines in the airchain, and CentOS 7 does not have i686 support, we include in this repository the official static i686 build of a newer ffmpeg which supports the necessary features.
+
 Credits for the underlying RDS encoder to [Christophe Jacquet](http://www.jacquet80.eu/) (F8FTK).
 
 Copyright 2016, released under the GNU GPL v3.
