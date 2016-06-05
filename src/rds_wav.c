@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
     }
     
     set_rds_pi(0x8BAD); // http://www.w9wi.com/articles/rdsreverse.htm
-    set_rds_ps("WUVT");
+    set_rds_ps("WUVT-FM");
     set_rds_rt(argv[2]);
     
     if(fm_mpx_open(NULL, LENGTH) != 0) {
