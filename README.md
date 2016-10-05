@@ -28,10 +28,6 @@ Initscripts.
 
 The rds encoder has a perfectly fine socket system for feeding it new track data. We just need to actually set up code to grab new track data and feed it into a unix socket, which is...eh, we could get around to it. Unfortunately, realtime rds encoder operation would end up requiring us to either sync ffmpeg, rds, and aplay (running at different sample rates), or add gstreamer support to PiFmRds. Refer back to the above warning regarding "total hacks". I'd argue that this one is the simpler, more stable evil.
 
-### omg why are you bundling a static ffmpeg?
-
-As is the custom at WUVT, we have selected the most reliable, rather than the newest, hardware. Or, more honestly, the cheapest. The rds deployment runs on a 32-bit tower which was donated to WUVT, like nearly all of our machines. Because we use CentOS for machines in the airchain, and CentOS 7 does not have i686 support, we include in this repository the official static i686 build of a newer ffmpeg which supports the necessary features.
-
 Credit for the underlying RDS encoder goes to [Christophe Jacquet](http://www.jacquet80.eu/) (F8FTK).
 
 Copyright 2016, released under the GNU GPL v3.
