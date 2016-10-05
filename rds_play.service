@@ -1,0 +1,9 @@
+[Unit]
+Description=rds signal playout
+
+[Service]
+ExecStart=/opt/PiFmRds/rds_play
+Type=simple
+
+[Install]
+WantedBy=default.target

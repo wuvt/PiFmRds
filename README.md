@@ -7,24 +7,22 @@ The WUVT IT Staff grabbed the code from [the original PiFmRds](https://github.co
 
 ### Build
 
-Clone the source repository and run `make` in the `src` directory:
+Clone the source repository and run `make`:
 
 ```bash
 git clone https://github.com/wuvt/PiFmRds
-cd PiFmRds/src
+cd PiFmRds
 make clean
 make
 ```
 
 ### Usage
 
-On rds, run both the rds_wuvt and rds_play scripts in the src directory. rds_wuvt generates the rds audio file, while rds_play plays it. If rds_wuvt is under maintenance or ceases to operate correctly, rds_play will continue to output the rds signal with static metadata. Systemd unit files coming soon.
+On rds, run both the rds_wuvt and rds_play scripts. rds_wuvt generates the rds audio file, while rds_play plays it. If rds_wuvt is under maintenance or ceases to operate correctly, rds_play will continue to output the rds signal with static metadata.
 
 As of May 2016, the RDS signal is output via the headphone jack on the PCI DAC, with the PCM Headphone control set to 55%, or -15.5 dB gain.
 
 ### Todo
-
-Initscripts.
 
 The rds encoder has a perfectly fine socket system for feeding it new track data. We just need to actually set up code to grab new track data and feed it into a unix socket, which is...eh, we could get around to it. Unfortunately, realtime rds encoder operation would end up requiring us to either sync ffmpeg, rds, and aplay (running at different sample rates), or add gstreamer support to PiFmRds. Refer back to the above warning regarding "total hacks". I'd argue that this one is the simpler, more stable evil.
 

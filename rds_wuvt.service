@@ -1,0 +1,10 @@
+[Unit]
+Description=metadata fetch and rds signal generation
+After=network.target
+
+[Service]
+ExecStart=/opt/PiFmRds/rds_wuvt
+Type=simple
+
+[Install]
+WantedBy=default.target
