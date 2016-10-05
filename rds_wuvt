@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FFMPEG="../ffmpeg*/ffmpeg"
+FFMPEG="ffmpeg"
 
 while true; do 
 	./rds_wav rds.wav "`curl -s https://www.wuvt.vt.edu/playlists/latest_track_clean`"
