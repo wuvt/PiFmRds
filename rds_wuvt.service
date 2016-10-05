@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=/opt/PiFmRds
-ExecStart=./rds_wuvt
+ExecStart=/opt/PiFmRds/rds_wuvt
 Type=simple
 
 [Install]

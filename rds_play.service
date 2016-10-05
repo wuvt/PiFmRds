@@ -3,7 +3,7 @@ Description=rds signal playout
 
 [Service]
 WorkingDirectory=/opt/PiFmRds
-ExecStart=./rds_play
+ExecStart=/opt/PiFmRds/rds_play
 Type=simple
 
 [Install]
