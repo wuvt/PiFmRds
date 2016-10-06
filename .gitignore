@@ -1,5 +1,6 @@
-src/waveform_*.wav
-src/pydemod
-src/test
+waveform_*.wav
+pydemod
+test
+rds_wav
 *.o
 
